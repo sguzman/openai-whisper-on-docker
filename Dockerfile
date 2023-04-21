@@ -10,15 +10,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install git+https://github.com/openai/whisper.git
 
 # Install model files
-RUN whisper --model tiny dummy.wav; exit 0
-RUN whisper --model base dummy.wav; exit 0
-RUN whisper --model small dummy.wav; exit 0
-RUN whisper --model medium dummy.wav; exit 0
 RUN whisper --model large dummy.wav; exit 0
-RUN whisper --model tiny.en dummy.wav; exit 0
-RUN whisper --model base.en dummy.wav; exit 0
-RUN whisper --model small.en dummy.wav; exit 0
-RUN whisper --model medium.en dummy.wav; exit 0
 
 ENTRYPOINT ["whisper"]
 CMD ["--help"]
